@@ -30,3 +30,14 @@ app.use('/api/user', userRoutes);
 
 /**signup routing */
 app.use('/api/auth', authRoutes);
+
+/**middle ware for errors */
+app.use((err, req, res, next) =>{
+    const statusCode = err.statusCode || 500;
+    const message = err.massage || 'internal server error';
+    res.status(statusCode).json({
+        success: false,
+        statusCode,
+        message
+    });
+});
