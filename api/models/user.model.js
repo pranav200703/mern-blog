@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-/*creating user schema (data) */
+/*creating user schema ( table data) */
 const userSchema = new mongoose.Schema({
     username:{
         type:String,
@@ -11,7 +11,11 @@ const userSchema = new mongoose.Schema({
         type:String,
         required: true,
     },
-}, {timestamps: true}/*adding for time of updation and creation */
+    password:{
+        type: String,
+        required: true,
+    },
+    },{timestamps: true}/*adding for time of updation and creation */
 );
 /*creating model */
 const User = mongoose.model('User', userSchema);
