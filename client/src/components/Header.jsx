@@ -1,7 +1,7 @@
-import { Avatar, Button, Dropdown, Navbar, TextInput } from "flowbite-react";
-import { Link, useLocation } from "react-router-dom";
-import {AiOutlineSearch} from "react-icons/ai";
-import {FaMoon, FaSun} from "react-icons/fa";
+import { Avatar, Button, Dropdown, Navbar, TextInput } from 'flowbite-react';
+import { Link, useLocation } from 'react-router-dom';
+import {AiOutlineSearch} from 'react-icons/ai';
+import {FaMoon, FaSun} from 'react-icons/fa';
 import {useSelector, useDispatch} from 'react-redux';
 import { toggleTheme } from '../redux/theme/themeSlice';
 
@@ -29,7 +29,7 @@ export default function Header() {
         </Button>
         <div className='flex  gap-2 md:order-2'>
             <Button className='w-12 h-10 hidden sm:inline' color='gray' pill onClick={() => dispatch(toggleTheme())}>
-            {theme === 'light' ? <FaSun /> : <FaMoon />}
+                {theme === 'light' ? <FaSun /> : <FaMoon />}
             </Button>
             { currentUser ? (
                 <Dropdown arrowIcon={false} inline label={<Avatar alt="user"  img={currentUser.profilePicture} rounded />}>
@@ -55,17 +55,17 @@ export default function Header() {
             <Navbar.Toggle />
         </div>
         <Navbar.Collapse>
-                <Navbar.Link active={path==="/"} as={'div'}>
+                <Navbar.Link active={path==='/'} as={'div'}>
                     <Link to='/'>
                         Home
                     </Link>
                 </Navbar.Link>
-                <Navbar.Link active={path==="/about"} as={'div'}>
+                <Navbar.Link active={path==='/about'} as={'div'}>
                     <Link to='/about'>
                         About
                     </Link>
                 </Navbar.Link>
-                <Navbar.Link active={path==="/projects"} as={'div'}>
+                <Navbar.Link active={path==='/projects'} as={'div'}>
                     <Link to='/projects'>
                         Services
                     </Link>
